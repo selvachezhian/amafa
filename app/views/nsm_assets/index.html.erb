@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nsm Assets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nsm asset</th>
+      <th>Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nsm_assets.each do |nsm_asset| %>
+      <tr>
+        <td><%= nsm_asset.nsm_asset_id %></td>
+        <td><%= nsm_asset.code %></td>
+        <td><%= link_to 'Show', nsm_asset %></td>
+        <td><%= link_to 'Edit', edit_nsm_asset_path(nsm_asset) %></td>
+        <td><%= link_to 'Destroy', nsm_asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nsm Asset', new_nsm_asset_path %>

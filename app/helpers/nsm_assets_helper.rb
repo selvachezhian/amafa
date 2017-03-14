@@ -1,0 +1,2 @@
+module NsmAssetsHelper
+end

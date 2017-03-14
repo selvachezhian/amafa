@@ -1,0 +1,27 @@
+<%= form_for(nsm_asset) do |f| %>
+  <% if nsm_asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nsm_asset.errors.count, "error") %> prohibited this nsm_asset from being saved:</h2>
+
+      <ul>
+      <% nsm_asset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nsm_asset_id_id %>
+    <%= f.collection_select(:nsm_asset_id, NsmAssetType.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
