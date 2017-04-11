@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 20170305115446) do
   end
 
   create_table "nsm_assets", force: :cascade do |t|
-    t.integer  "nsm_asset_id"
     t.string   "code"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["nsm_asset_id"], name: "index_nsm_assets_on_nsm_asset_id", using: :btree
+    t.integer  "nsm_asset_type_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["nsm_asset_type_id"], name: "index_nsm_assets_on_nsm_asset_type_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,5 +68,4 @@ ActiveRecord::Schema.define(version: 20170305115446) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
   end
 
-  add_foreign_key "nsm_assets", "nsm_assets"
 end

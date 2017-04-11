@@ -1,8 +1,8 @@
 class CreateNsmAssets < ActiveRecord::Migration[5.0]
   def change
     create_table :nsm_assets do |t|
-      t.references :nsm_asset, foreign_key: true
       t.string :code
+      t.integer :nsm_asset_type_id, index: true
 
       t.timestamps
     end

@@ -69,6 +69,6 @@ class NsmAssetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nsm_asset_params
-      params.require(:nsm_asset).permit(:nsm_asset_id_id, :code)
+      params.require(:nsm_asset).permit(:nsm_asset_type_id, :code)
     end
 end

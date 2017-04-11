@@ -13,11 +13,11 @@ module Amafa
     # -- all .rb files in that directory are automatically loaded.
 
     config.action_mailer.smtp_settings = {
-        address: 'smtpgw.chec.local',
-        port: 25,
-        authentication: :plain,
-        enable_starttls_auto: true,
-        openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
+      address: 'smtpgw.chec.local',
+      port: 25,
+      authentication: :plain,
+      enable_starttls_auto: true,
+      openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE
     }
   end
 end
