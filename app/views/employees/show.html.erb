@@ -1,37 +1,57 @@
-<p>
-  <strong>First name:</strong>
-  <%= @employee.first_name %>
-</p>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @employee.last_name %>
-</p>
+<div class="container">
+  <h3>Employee details</h3>
 
-<p>
-  <strong>Email:</strong>
-  <%= @employee.email %>
-</p>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="First name">First name:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @employee.first_name %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>User name:</strong>
-  <%= @employee.user_name %>
-</p>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Last name">Last name:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @employee.last_name %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Joining date:</strong>
-  <%= @employee.joining_date %>
-</p>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Email">Email:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @employee.email %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Relieving date:</strong>
-  <%= @employee.relieving_date %>
-</p>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="User name">User name:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @employee.user_name %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Emp:</strong>
-  <%= @employee.emp_id %>
-</p>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Joining date">Joining date:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @employee.joining_date %></p>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Relieving date">Relieving date:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @employee.relieving_date %></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Emp">Emp:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @employee.emp_id %></p>
+    </div>
+  </div>
+
+<%= link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-info' %>
+<%= link_to 'Back', employees_path, class: 'btn btn-info' %>
+</div>
