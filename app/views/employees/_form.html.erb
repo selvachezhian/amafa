@@ -70,4 +70,6 @@
         </div>
       </div>
     </div>
+
+    <%= text_field_tag('users[country_id]', nil, { :class => 'auto_complete', 'data-url' => 'http://shell.loopj.com/tokeninput/tvshows.php', 'data-duplicate' => 'false', 'data-selection-limit' => '10', 'data-hint-text' => 'Type to search  Country', 'data-no-result' => 'No Country found', 'data-searching-text' => 'Fetching Countries', 'data-selected' => [{id: 123, name: 'Slurms MacKenzie' }, {id: 555, name: 'Bob Hoskins' }].to_json }) %>
 <% end %>
