@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305115446) do
+ActiveRecord::Schema.define(version: 20170417061617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,16 @@ ActiveRecord::Schema.define(version: 20170305115446) do
     t.date     "joining_date"
     t.date     "relieving_date"
     t.string   "emp_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "citrix_id"
+    t.string   "project"
+    t.string   "manager"
+    t.boolean  "citrix_access"
+    t.boolean  "admin_access"
+    t.integer  "department",           default: 1
+    t.boolean  "document_signed"
+    t.boolean  "beachhead_computrace"
   end
 
   create_table "nsm_asset_types", force: :cascade do |t|
@@ -32,13 +40,22 @@ ActiveRecord::Schema.define(version: 20170305115446) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "charger"
+    t.boolean  "laptop_bag"
   end
 
   create_table "nsm_assets", force: :cascade do |t|
     t.string   "code"
     t.integer  "nsm_asset_type_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "nsm_tag"
+    t.string   "computer_name"
+    t.string   "service_tag"
+    t.string   "mac_id"
+    t.integer  "memory",            default: 1
+    t.boolean  "antivirus_check"
+    t.integer  "operating_system",  default: 1
     t.index ["nsm_asset_type_id"], name: "index_nsm_assets_on_nsm_asset_type_id", using: :btree
   end
 
