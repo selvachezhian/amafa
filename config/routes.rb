@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :nsm_assets
+  resources :nsm_assets do
+    get 'user_nsm_asset', on: :collection
+  end
   resources :nsm_asset_types
   resources :employees
   devise_for :users

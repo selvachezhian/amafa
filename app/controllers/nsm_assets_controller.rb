@@ -61,14 +61,25 @@ class NsmAssetsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_nsm_asset
-      @nsm_asset = NsmAsset.find(params[:id])
-    end
+  def search_assets
+    NsmAsset.un_assigned.by_code(params[:code]).select(:id, :code)
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def nsm_asset_params
-      params.require(:nsm_asset).permit(:nsm_asset_type_id, :code)
+  def user_nsm_asset
+    respond_to do |format|
+      format.html
+      format.json { render json: NsmAssetDatatable.new(view_context, employee: params[:employee]) }
     end
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_nsm_asset
+    @nsm_asset = NsmAsset.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def nsm_asset_params
+    params.require(:nsm_asset).permit(:nsm_asset_type_id, :code)
+  end
 end

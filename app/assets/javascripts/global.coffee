@@ -1,3 +1,10 @@
+(exports ? this).data_table = ->
+  $('#users-table').dataTable
+    processing: true
+    serverSide: true
+    ajax: $('#users-table').data('source')
+    pagingType: 'full_numbers'
+
 $(document).on "ready page:load", ->
   $.each $('.auto_complete'), (index, value) ->
     $('#' + $(this).attr('id')).tokenInput $(this).attr('data-url'),

@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require jquery.tokeninput.js
+//= require dataTables/jquery.dataTables
 //= require_tree .

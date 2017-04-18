@@ -59,8 +59,12 @@ gem 'nokogiri', '1.7.0.1'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
+gem 'kaminari'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
-gem 'artii'
+gem 'jquery-datatables-rails'
+gem 'ajax-datatables-rails'
+gem 'jquery-ui-rails'

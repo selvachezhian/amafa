@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417061617) do
+ActiveRecord::Schema.define(version: 20170417100505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "employee_assets", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.integer  "nsm_asset_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["employee_id"], name: "index_employee_assets_on_employee_id", using: :btree
+    t.index ["nsm_asset_id"], name: "index_employee_assets_on_nsm_asset_id", using: :btree
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
@@ -56,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170417061617) do
     t.integer  "memory",            default: 1
     t.boolean  "antivirus_check"
     t.integer  "operating_system",  default: 1
+    t.boolean  "assigned"
     t.index ["nsm_asset_type_id"], name: "index_nsm_assets_on_nsm_asset_type_id", using: :btree
   end
 

@@ -19,6 +19,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    @associated_assets = @employee.nsm_assets
   end
 
   # POST /employees
