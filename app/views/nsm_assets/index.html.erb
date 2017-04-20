@@ -6,6 +6,7 @@
     <tr>
       <th>Nsm asset</th>
       <th>Code</th>
+      <th>Invoice Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= nsm_asset.nsm_asset_type.name %></td>
         <td><%= nsm_asset.code %></td>
+        <td><%= nsm_asset.invoice_number %></td>
         <td><%= link_to 'Show', nsm_asset, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_nsm_asset_path(nsm_asset), class: 'btn btn-default' %></td>
         <td><%= link_to 'Destroy', nsm_asset, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?'} %></td>
