@@ -6,8 +6,6 @@
 <% selected_assets = @employee.nsm_assets.map { |asset| { id: asset.id, name: asset.code } } %>
 <%= text_field_tag('search_assets', nil, { :class => 'auto_complete', 'data-url' => search_assets_nsm_assets_path, 'data-duplicate' => 'false', 'data-hint-text' => 'Type to search Unassigned Assets', 'data-no-result' => 'No Assets found', 'data-searching-text' => 'Fetching Assets', 'data-selected' => selected_assets.to_json, 'data-on-add-call-function' => 'assign_asset', 'data-on-delete-call-function' => 'un_assign_asset' }) %>
 
-<%= button_tag('Add', id: 'add_asset') %>
-
 <table id="users-table" data-source="<%= user_nsm_asset_nsm_assets_path(format: :json, employee: @employee.id.to_s) %>" class="table table-bordered">
   <thead>
   <tr>
