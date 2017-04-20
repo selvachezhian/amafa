@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/nav_bar' if user_signed_in? %>
     <%= yield %>
   </body>
 </html>

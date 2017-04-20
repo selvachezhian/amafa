@@ -1,0 +1,17 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span class="text-uppercase">Amafa</span></a>
+    </div>
+    <ul class="nav navbar-nav">
+
+      <%= content_tag(:li, { class: params[:controller].eql?('employees') ? 'active' : '' }) { link_to 'Employees', employees_path } %>
+      <%= content_tag(:li, { class: params[:controller].eql?('nsm_assets') ? 'active' : '' }) { link_to 'Assets', nsm_assets_path } %>
+      <%= content_tag(:li, { class: params[:controller].eql?('nsm_asset_types') ? 'active' : '' }) { link_to 'Asset Types', nsm_asset_types_path } %>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <%= content_tag(:li) { link_to 'Sign out', destroy_user_session_path, method: :delete } %>
+    </ul>
+  </div>
+</nav>
