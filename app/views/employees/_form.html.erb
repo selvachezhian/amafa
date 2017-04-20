@@ -127,10 +127,14 @@
       </div>
     </div>
 
-    <%= text_field_tag('users[country_id]', nil, { :class => 'auto_complete', 'data-url' => 'http://shell.loopj.com/tokeninput/tvshows.php', 'data-duplicate' => 'false', 'data-selection-limit' => '10', 'data-hint-text' => 'Type to search  Country', 'data-no-result' => 'No Country found', 'data-searching-text' => 'Fetching Countries', 'data-selected' => [{id: 123, name: 'Slurms MacKenzie' }, {id: 555, name: 'Bob Hoskins' }].to_json }) %>
+
 
 
 <% end %>
+
+<%= text_field_tag('search_assets', nil, { :class => 'auto_complete', 'data-url' => search_assets_nsm_assets_path, 'data-duplicate' => 'false', 'data-hint-text' => 'Type to search Unassigned Assets', 'data-no-result' => 'No Assets found', 'data-searching-text' => 'Fetching Assets', 'data-on-add-call-function' => 'assign_asset' }) %>
+
+<%= button_tag('Add', id: 'add_asset') %>
 
 <table id="users-table" data-source="<%= user_nsm_asset_nsm_assets_path(format: :json, employee: @employee.id.to_s) %>" class="table table-bordered">
   <thead>
@@ -143,3 +147,8 @@
   <tbody>
   </tbody>
 </table>
+
+<script>
+    autoComplete();
+    data_table();
+</script>

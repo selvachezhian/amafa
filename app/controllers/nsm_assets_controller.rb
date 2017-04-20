@@ -62,7 +62,9 @@ class NsmAssetsController < ApplicationController
   end
 
   def search_assets
-    NsmAsset.un_assigned.by_code(params[:code]).select(:id, :code)
+    assets = NsmAsset.un_assigned.by_code(params[:q]).select(:id, :code)
+    result = assets.map { |a| { id: a.id, name: a.code } }
+    render json: result.to_json
   end
 
   def user_nsm_asset

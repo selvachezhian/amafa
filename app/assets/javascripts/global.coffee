@@ -5,7 +5,10 @@
     ajax: $('#users-table').data('source')
     pagingType: 'full_numbers'
 
-$(document).on "ready page:load", ->
+(exports ? this).assign_asset = (id) ->
+  
+
+(exports ? this).autoComplete = ->
   $.each $('.auto_complete'), (index, value) ->
     $('#' + $(this).attr('id')).tokenInput $(this).attr('data-url'),
       preventDuplicates: if 'false' == $(this).attr('data-duplicate') then false else true
@@ -14,10 +17,14 @@ $(document).on "ready page:load", ->
       noResultsText: if null == $(this).attr('data-no-result') then 'No Data Found' else $(this).attr('data-no-result')
       searchingText: if null == $(this).attr('data-searching-text') then 'Fetching Data' else $(this).attr('data-searching-text')
       onAdd: (item) ->
-        if null == $(this).attr('data-on-add-call-function') then {} else eval($(this).attr('data-on-add-call-function') + '(item.id, $(this).attr(\'data-success-update\'))')
+        if null == $(this).attr('data-on-add-call-function') then {} else eval($(this).attr('data-on-add-call-function') + '(item.id)')
         return
       onDelete: ->
         if null == $(this).attr('data-on-delete-call-function') then [] else eval($(this).attr('data-on-delete-call-function') + '($(this).attr(\'data-success-update\'))')
         return
       prePopulate: if null == $(this).attr('data-selected') then [] else eval($(this).attr('data-selected'))
       theme: if null == $(this).attr('data-theme') then 'mac' else $(this).attr('data-theme')
+
+$(document).on "ready page:load", ->
+#  autoComplete()
+

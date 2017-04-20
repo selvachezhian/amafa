@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :nsm_assets do
     get 'user_nsm_asset', on: :collection
+    get 'search_assets', on: :collection
   end
   resources :nsm_asset_types
   resources :employees
