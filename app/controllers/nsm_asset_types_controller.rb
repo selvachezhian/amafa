@@ -69,6 +69,6 @@ class NsmAssetTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nsm_asset_type_params
-      params.require(:nsm_asset_type).permit(:name, :description)
+      params.require(:nsm_asset_type).permit(:name, :description, :charger, :laptop_bag)
     end
 end
