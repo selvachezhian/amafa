@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nsm asset:</strong>
-  <%= @nsm_asset.nsm_asset_type_id %>
-</p>
+<div class="container">
+<h3>Asset details</h3>
 
-<p>
-  <strong>Code:</strong>
-  <%= @nsm_asset.code %>
-</p>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Nsm asset">Nsm asset:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @nsm_asset.nsm_asset_type_id %></p>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_nsm_asset_path(@nsm_asset) %> |
-<%= link_to 'Back', nsm_assets_path %>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="Code">Code:</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @nsm_asset.code %></p>
+    </div>
+  </div>
+
+
+<%= link_to 'Edit', edit_nsm_asset_path(@nsm_asset), class: 'btn btn-info' %>
+<%= link_to 'Back', nsm_assets_path, class: 'btn btn-info' %>
+</div>
