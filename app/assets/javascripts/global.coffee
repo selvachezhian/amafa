@@ -6,7 +6,18 @@
     pagingType: 'full_numbers'
 
 (exports ? this).assign_asset = (id) ->
-  
+  employee_id = $('#employee_id').val()
+  path = '/employees/' + employee_id + '/edit'
+  $.ajax(
+    type: 'POST'
+    url: '/employees/assign_asset'
+    dataType: 'html'
+    data:
+      employee_id: employee_id
+      asset_id: id
+    success: (data) ->
+      Turbolinks.visit(path)
+  )
 
 (exports ? this).autoComplete = ->
   $.each $('.auto_complete'), (index, value) ->

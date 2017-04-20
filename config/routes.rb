@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     get 'search_assets', on: :collection
   end
   resources :nsm_asset_types
-  resources :employees
+  resources :employees do
+    post 'assign_asset', on: :collection
+    delete 'remove_asset', on: :collection
+  end
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

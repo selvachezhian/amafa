@@ -62,6 +62,19 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def assign_asset
+    EmployeeAsset.transaction do
+      EmployeeAsset.create(employee_id: params[:employee_id], nsm_asset_id: params[:asset_id])
+      nsm_asset = NsmAsset.find(params[:asset_id])
+      nsm_asset.update_attribute(:assigned, true)
+    end
+    render text: 'success'
+  end
+
+  def remove_asset
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
