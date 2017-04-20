@@ -19,6 +19,20 @@
       Turbolinks.visit(path)
   )
 
+(exports ? this).un_assign_asset = (id) ->
+  employee_id = $('#employee_id').val()
+  path = '/employees/' + employee_id + '/edit'
+  $.ajax(
+    type: 'DELETE'
+    url: '/employees/remove_asset'
+    dataType: 'html'
+    data:
+      employee_id: employee_id
+      asset_id: id
+    success: (data) ->
+      Turbolinks.visit(path)
+  )
+
 (exports ? this).autoComplete = ->
   $.each $('.auto_complete'), (index, value) ->
     $('#' + $(this).attr('id')).tokenInput $(this).attr('data-url'),
@@ -30,8 +44,8 @@
       onAdd: (item) ->
         if null == $(this).attr('data-on-add-call-function') then {} else eval($(this).attr('data-on-add-call-function') + '(item.id)')
         return
-      onDelete: ->
-        if null == $(this).attr('data-on-delete-call-function') then [] else eval($(this).attr('data-on-delete-call-function') + '($(this).attr(\'data-success-update\'))')
+      onDelete: (item) ->
+        if null == $(this).attr('data-on-delete-call-function') then [] else eval($(this).attr('data-on-delete-call-function') + '(item.id)')
         return
       prePopulate: if null == $(this).attr('data-selected') then [] else eval($(this).attr('data-selected'))
       theme: if null == $(this).attr('data-theme') then 'mac' else $(this).attr('data-theme')

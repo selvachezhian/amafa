@@ -72,7 +72,14 @@ class EmployeesController < ApplicationController
   end
 
   def remove_asset
-
+    EmployeeAsset.transaction do
+      employee = Employee.find(params[:employee_id])
+      assigned_asset = employee.employee_assets.by_asset(params[:asset_id]).first
+      asset = NsmAsset.find(params[:asset_id])
+      assigned_asset.delete
+      asset.update_attribute(:assigned, false)
+    end
+    render text: 'success'
   end
 
   private
