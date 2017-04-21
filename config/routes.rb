@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :departments
   resources :nsm_assets do
     get 'user_nsm_asset', on: :collection
     get 'search_assets', on: :collection

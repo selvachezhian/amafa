@@ -8,6 +8,7 @@
       <%= content_tag(:li, { class: params[:controller].eql?('employees') ? 'active' : '' }) { link_to 'Employees', employees_path } %>
       <%= content_tag(:li, { class: params[:controller].eql?('nsm_assets') ? 'active' : '' }) { link_to 'Assets', nsm_assets_path } %>
       <%= content_tag(:li, { class: params[:controller].eql?('nsm_asset_types') ? 'active' : '' }) { link_to 'Asset Types', nsm_asset_types_path } %>
+      <%= content_tag(:li, { class: params[:controller].eql?('departments') ? 'active' : '' }) { link_to 'Department', departments_path } %>
 
     </ul>
     <ul class="nav navbar-nav navbar-right">
