@@ -11,9 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import "bootstrap";
-@import "scaffolds";
 @import "bootstrap.min";
+@import "scaffolds";
 @import "token-input";
 @import "token-input-mac";
 @import "dataTables/src/demo_table";
