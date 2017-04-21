@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421053515) do
+ActiveRecord::Schema.define(version: 20170421100659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,16 +39,16 @@ ActiveRecord::Schema.define(version: 20170421053515) do
     t.date     "joining_date"
     t.date     "relieving_date"
     t.string   "emp_id"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "citrix_id"
     t.string   "project"
     t.string   "manager"
     t.boolean  "citrix_access"
     t.boolean  "admin_access"
-    t.integer  "department",           default: 1
     t.boolean  "document_signed"
     t.boolean  "beachhead_computrace"
+    t.string   "department_id"
   end
 
   create_table "nsm_asset_types", force: :cascade do |t|
