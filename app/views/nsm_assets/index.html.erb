@@ -13,13 +13,12 @@
 
   <tbody>
     <% @nsm_assets.each do |nsm_asset| %>
-      <tr>
+      <tr onclick="window.location.href = 'nsm_assets/<%= nsm_asset.id %>'">
         <td><%= nsm_asset.nsm_asset_type.name %></td>
         <td><%= nsm_asset.code %></td>
         <td><%= nsm_asset.invoice_number %></td>
-        <td><%= link_to 'Show', nsm_asset, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_nsm_asset_path(nsm_asset), class: 'btn btn-default' %></td>
-        <td><%= link_to 'Destroy', nsm_asset, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        <td><%= link_to 'Remove', nsm_asset, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
   </tbody>

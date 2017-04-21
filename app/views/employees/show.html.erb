@@ -108,6 +108,10 @@
     </div>
   </div>
 
+
+  <%= link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-info' %>
+  <%= link_to 'Back', employees_path, class: 'btn btn-info' %>
+
   <table id="users-table" data-source="<%= user_nsm_asset_nsm_assets_path(format: :json, employee: @employee.id.to_s) %>" class="table table-bordered">
     <thead>
     <tr>
@@ -124,7 +128,4 @@
       data_table();
   </script>
 
-
-  <%= link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-info' %>
-  <%= link_to 'Back', employees_path, class: 'btn btn-info' %>
 </div>

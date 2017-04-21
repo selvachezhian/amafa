@@ -17,7 +17,7 @@
 
     <tbody>
     <% @employees.each do |employee| %>
-        <tr>
+        <tr onclick="window.location.href = 'employees/<%= employee.id %>'">
           <td><%= employee.first_name %></td>
           <td><%= employee.last_name %></td>
           <td><%= employee.email %></td>
@@ -25,13 +25,12 @@
           <td><%= employee.joining_date %></td>
           <td><%= employee.relieving_date %></td>
           <td><%= employee.emp_id %></td>
-          <td><%= link_to 'Show', employee, class: 'btn btn-default'  %></td>
-          <td><%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-default'  %></td>
+          <td><%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-default' %></td>
           <td><%= link_to 'Destroy', employee, class: 'btn btn-default', method: :delete, data: {confirm: 'Are you sure?'} %></td>
         </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<%= link_to 'New Employee', new_employee_path, class: 'btn btn-info'%>
+  <%= link_to 'New Employee', new_employee_path, class: 'btn btn-info' %>
 </div>
