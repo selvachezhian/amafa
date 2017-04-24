@@ -17,11 +17,11 @@
 
     <tbody>
     <% @employees.each do |employee| %>
-        <tr onclick="window.location.href = 'employees/<%= employee.id %>'">
+        <tr>
           <td><%= employee.first_name %></td>
           <td><%= employee.last_name %></td>
           <td><%= employee.email %></td>
-          <td><%= employee.user_name %></td>
+          <td><%= link_to_employee(employee, 'first_name') %></td>
           <td><%= employee.joining_date %></td>
           <td><%= employee.relieving_date %></td>
           <td><%= employee.emp_id %></td>

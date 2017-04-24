@@ -2,11 +2,12 @@
 
 <%= render 'form', employee: @employee %>
 
+<div class="container-fluid">
 <%= hidden_field_tag('employee_id', @employee.id) %>
 <% selected_assets = @employee.nsm_assets.map { |asset| { id: asset.id, name: asset.code } } %>
 <%= text_field_tag('search_assets', nil, { :class => 'auto_complete', 'data-url' => search_assets_nsm_assets_path, 'data-duplicate' => 'false', 'data-hint-text' => 'Type to search Unassigned Assets', 'data-no-result' => 'No Assets found', 'data-searching-text' => 'Fetching Assets', 'data-selected' => selected_assets.to_json, 'data-on-add-call-function' => 'assign_asset', 'data-on-delete-call-function' => 'un_assign_asset' }) %>
 
-<table id="users-table" data-source="<%= user_nsm_asset_nsm_assets_path(format: :json, employee: @employee.id.to_s) %>" class="table table-bordered">
+<table id="users-table" data-source="<%= user_nsm_asset_nsm_assets_path(format: :json, employee: @employee.id.to_s) %>" class="table table-striped table-hover table-condensed table-bordered">
   <thead>
   <tr>
     <th>Id</th>
@@ -25,3 +26,4 @@
     autoComplete();
     data_table();
 </script>
+</div>

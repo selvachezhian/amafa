@@ -15,8 +15,8 @@
 
   <tbody>
     <% @departments.each do |department| %>
-      <tr onclick="window.location.href = 'departments/<%= department.id %>'">
-        <td><%= department.name %></td>
+      <tr>
+        <td><%= link_to department.name, department %></td>
         <td><%= department.description %></td>
         <td><%= link_to 'Edit', edit_department_path(department), class: 'btn btn-default'  %></td>
         <td><%= link_to 'Remove', department, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %></td>
