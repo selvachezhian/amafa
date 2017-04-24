@@ -17,4 +17,12 @@
 //= require turbolinks
 //= require jquery.tokeninput.js
 //= require dataTables/jquery.dataTables
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .
+
+NProgress.configure({
+    showSpinner: false,
+    ease: 'ease',
+    speed: 500
+});

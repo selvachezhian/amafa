@@ -68,3 +68,5 @@ end
 gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 gem 'jquery-ui-rails'
+
+gem 'nprogress-rails'
