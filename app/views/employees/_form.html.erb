@@ -14,109 +14,87 @@
     <div class="container-fluid">
       <div class="form-group">
         <%= f.label :first_name, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.text_field :first_name, class: 'form-control', placeholder: 'Enter first name' %>
         </div>
-      </div>
-
-
-      <div class="form-group">
         <%= f.label :last_name, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.text_field :last_name, class: 'form-control', placeholder: 'Enter last name' %>
         </div>
       </div>
 
-
       <div class="form-group">
         <%= f.label :email, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.text_field :email, class: 'form-control', placeholder: 'Enter email address' %>
         </div>
-      </div>
-
-      <div class="form-group">
         <%= f.label :user_name, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.text_field :user_name, class: 'form-control', placeholder: 'Enter Username' %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :joining_date, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.date_select :joining_date, class: 'form-control' %>
         </div>
-      </div>
-
-      <div class="form-group">
         <%= f.label :relieving_date, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.date_select :relieving_date, class: 'form-control', include_blank: true %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :emp_id, 'Employee id', class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.text_field :emp_id, class: 'form-control', placeholder: 'Enter employee id' %>
         </div>
-      </div>
-
-      <div class="form-group">
         <%= f.label :citrix_id, 'Citrix id', class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.text_field :citrix_id, class: 'form-control', placeholder: 'Enter citrix id' %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :project, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.text_field :project, class: 'form-control', placeholder: 'Enter project name' %>
         </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :manager, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
-          <%= f.text_field :manager, class: 'form-control', placeholder: 'Enter manager name' %>
-        </div>
-      </div>
-
-      <div class="form-group dropdown">
-        <%= f.label :citrix_access, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
-          <%= f.check_box(:citrix_access)%>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :admin_access, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
-          <%= f.check_box(:admin_access)%>
-        </div>
-      </div>
-
-      <div class="form-group">
         <%= f.label :department, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
+        <div class="col-sm-3">
           <%= f.collection_select :department_id, Department.all, :id, :name, {}, class: 'form-control' %>
         </div>
       </div>
 
       <div class="form-group">
-        <%= f.label :document_signed, class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
-          <%= f.check_box(:document_signed)%>
+        <%= f.label :manager, class: 'control-label col-sm-2' %>
+        <div class="col-sm-3">
+          <%= f.text_field :manager, class: 'form-control', placeholder: 'Enter manager name' %>
         </div>
       </div>
 
       <div class="form-group">
-        <%= f.label :beachhead_computrace, 'Beachhead/computrace', class: 'control-label col-sm-2' %>
-        <div class="col-sm-10">
-          <%= f.check_box(:beachhead_computrace)%>
+        <%= f.label :citrix_access, class: 'control-label col-sm-2' %>
+        <div class="col-sm-1">
+          <%= f.check_box(:citrix_access) %>
         </div>
+        <%= f.label :admin_access, class: 'control-label col-sm-2' %>
+        <div class="col-sm-1">
+          <%= f.check_box(:admin_access) %>
+        </div>
+        <%= f.label :document_signed, class: 'control-label col-sm-2' %>
+        <div class="col-sm-1">
+          <%= f.check_box(:document_signed) %>
+        </div>
+        <%= f.label :beachhead_computrace, 'Beachhead/computrace', class: 'control-label col-sm-2' %>
+        <div class="col-sm-1">
+          <%= f.check_box(:beachhead_computrace) %>
+        </div>
+      </div>
+
+      <div class="form-group">
+
       </div>
 
       <div class="actions">
