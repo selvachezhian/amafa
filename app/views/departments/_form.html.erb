@@ -30,7 +30,7 @@
         <div class="col-sm-offset-2 col-sm-4">
           <%= f.submit class: 'btn btn-info' %>
           <%= link_to 'Back', departments_path, class: 'btn btn-info' %>
-          <%= (link_to 'Show', department_path(department), class: 'btn btn-info') if params[:action].eql?('edit') %>
+          <%= (link_to 'Show', department_path(department), class: 'btn btn-info') unless department.new_record? %>
         </div>
       </div>
     </div>
