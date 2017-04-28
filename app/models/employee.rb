@@ -9,4 +9,10 @@ class Employee < ApplicationRecord
   after_initialize do |employee|
     employee.active = employee.new_record? ? true : employee.active
   end
+
+  after_save do |employee|
+    employee.employee_assets.each do |employee_asset|
+      employee_asset.delete_and_unassign
+    end
+  end
 end
