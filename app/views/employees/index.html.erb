@@ -31,6 +31,8 @@
     <% end %>
     </tbody>
   </table>
-
+  <%= paginate @employees %>
+  <div class="row container">
   <%= link_to 'New Employee', new_employee_path, class: 'btn btn-info' %>
+  </div>
 </div>
