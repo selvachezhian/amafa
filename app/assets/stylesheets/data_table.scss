@@ -1,0 +1,47 @@
+.dataTables_wrapper {
+  padding-top: 10px;
+}
+
+.search_assets_in_edit{
+  padding-top: 20px;
+}
+
+  table.dataTable thead .sorting:after {
+    opacity: 0.2;
+    content: ""; /* sort */
+  }
+
+  table.dataTable thead .sorting_asc:after {
+    content: ""; /* sort-by-attributes */
+  }
+  table.dataTable thead .sorting_desc:after {
+    content: ""; /* sort-by-attributes-alt */
+  }
+
+  /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+   * DataTables sorting
+   */
+
+  .sorting_asc {
+    background: url('data_table/sort_asc.png') no-repeat center right;
+  }
+
+  .sorting_desc {
+    background: url('data_table/sort_desc.png') no-repeat center right;
+  }
+
+  .sorting {
+    background: url('data_table/sort_both.png') no-repeat center right;
+  }
+
+  .sorting_asc_disabled {
+    background: url('data_table/sort_asc_disabled.png') no-repeat center right;
+  }
+
+  .sorting_desc_disabled {
+    background: url('data_table/sort_desc_disabled.png') no-repeat center right;
+  }
+
+  th:active {
+    outline: none;
+  }
