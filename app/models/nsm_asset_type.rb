@@ -1,6 +1,8 @@
 class NsmAssetType < ApplicationRecord
   has_many :nsm_assets
 
+  validates :name, presence: true, uniqueness: true
+
   def purchased
     nsm_assets
   end
