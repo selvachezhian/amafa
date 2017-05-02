@@ -5,10 +5,7 @@ class NsmAssetTypesController < ApplicationController
   # GET /nsm_asset_types.json
   def index
     @nsm_asset_types = NsmAssetType.all
-    respond_to do |format|
-      format.html
-      format.xls
-    end
+    respond_to :html, :xls
   end
 
   # GET /nsm_asset_types/1

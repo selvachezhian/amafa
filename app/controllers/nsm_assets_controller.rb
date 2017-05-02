@@ -4,7 +4,7 @@ class NsmAssetsController < ApplicationController
   # GET /nsm_assets
   # GET /nsm_assets.json
   def index
-    @nsm_assets = NsmAsset.all
+    @nsm_assets = NsmAsset.order(:code).page params[:page]
   end
 
   # GET /nsm_assets/1
