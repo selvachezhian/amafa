@@ -1,0 +1,19 @@
+p#notice
+  = notice
+h3
+  | Department details
+.container-fluid
+  .form-group
+    label.control-label.col-sm-2[for="Department name"]
+      | Name:
+    .col-sm-10
+      p.form-control-static
+        = @department.name
+  .form-group
+    label.control-label.col-sm-2[for="Description"]
+      | Description:
+    .col-sm-10
+      p.form-control-static
+        = @department.description
+  =< link_to 'Edit', edit_department_path(@department), class: 'btn btn-info'
+  =< link_to 'Back', departments_path, class: 'btn btn-info'
