@@ -1,0 +1,67 @@
+p#notice
+  = notice
+.container-fluid
+  h3
+    | Asset details
+  .form-group
+    label.control-label.col-sm-2[for="Nsm asset"]
+      | Nsm asset:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.nsm_asset_type_id
+  .form-group
+    label.control-label.col-sm-2[for="Code"]
+      | Code:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.code
+  .form-group
+    label.control-label.col-sm-2[for="Nsm Tag"]
+      | Tag:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.nsm_tag
+  .form-group
+    label.control-label.col-sm-2[for="Computer Name"]
+      | Computer Name:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.computer_name
+  .form-group
+    label.control-label.col-sm-2[for="Service Tag"]
+      | Service Tag:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.service_tag
+  .form-group
+    label.control-label.col-sm-2[for="Mac Id"]
+      | Mac Id:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.mac_id
+  .form-group
+    label.control-label.col-sm-2[for="Antivirus Check"]
+      | Antivirus Check:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.antivirus_check
+  .form-group
+    label.control-label.col-sm-2[for="Memory"]
+      | Memory:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.memory
+  .form-group
+    label.control-label.col-sm-2[for="Operating system"]
+      | Operating System:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.operating_system
+  .form-group
+    label.control-label.col-sm-2[for="Invoice number"]
+      | Invoice Number:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset.invoice_number
+  = link_to 'Edit', edit_nsm_asset_path(@nsm_asset), class: 'btn btn-info'
+  =< link_to 'Back', nsm_assets_path, class: 'btn btn-info'

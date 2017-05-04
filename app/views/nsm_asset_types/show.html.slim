@@ -1,0 +1,31 @@
+p#notice
+  = notice
+.container-fluid
+  h3
+    | NSM Asset details
+  .form-group
+    label.control-label.col-sm-2[for="Name"]
+      | Name:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset_type.name
+  .form-group
+    label.control-label.col-sm-2[for="Description"]
+      | Description:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset_type.description
+  .form-group
+    label.control-label.col-sm-2[for="Charger"]
+      | Charger:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset_type.charger
+  .form-group
+    label.control-label.col-sm-2[for="Charger"]
+      | Laptop Bag:
+    .col-sm-10
+      p.form-control-static
+        = @nsm_asset_type.laptop_bag
+  =< link_to 'Edit', edit_nsm_asset_type_path(@nsm_asset_type), class: 'btn btn-info'
+  =< link_to 'Back', nsm_asset_types_path, class: 'btn btn-info'

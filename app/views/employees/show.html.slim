@@ -1,0 +1,118 @@
+p#notice
+  = notice
+h3
+  | Employee details
+.container-fluid
+  .form-group
+    label.control-label.col-sm-2[for="First name"]
+      | First name:
+    .col-sm-10
+      p.form-control-static
+        = @employee.first_name
+  .form-group
+    label.control-label.col-sm-2[for="Last name"]
+      | Last name:
+    .col-sm-10
+      p.form-control-static
+        = @employee.last_name
+  .form-group
+    label.control-label.col-sm-2[for="Email"]
+      | Email:
+    .col-sm-10
+      p.form-control-static
+        = @employee.email
+  .form-group
+    label.control-label.col-sm-2[for="User name"]
+      | User name:
+    .col-sm-10
+      p.form-control-static
+        = @employee.user_name
+  .form-group
+    label.control-label.col-sm-2[for="Joining date"]
+      | Joining date:
+    .col-sm-10
+      p.form-control-static
+        = @employee.joining_date
+  .form-group
+    label.control-label.col-sm-2[for="Relieving date"]
+      | Relieving date:
+    .col-sm-10
+      p.form-control-static
+        = @employee.relieving_date
+  .form-group
+    label.control-label.col-sm-2[for="Emp"]
+      | Employee id:
+    .col-sm-10
+      p.form-control-static
+        = @employee.emp_id
+  .form-group
+    label.control-label.col-sm-2[for="Citrix id"]
+      | citrix_id:
+    .col-sm-10
+      p.form-control-static
+        = @employee.citrix_id
+  .form-group
+    label.control-label.col-sm-2[for="Project id"]
+      | Project id:
+    .col-sm-10
+      p.form-control-static
+        = @employee.project
+  .form-group
+    label.control-label.col-sm-2[for="manager"]
+      | Manager:
+    .col-sm-10
+      p.form-control-static
+        = @employee.manager
+  .form-group
+    label.control-label.col-sm-2[for="citrix access"]
+      | Citrix Access:
+    .col-sm-10
+      p.form-control-static
+        = @employee.citrix_access
+  .form-group
+    label.control-label.col-sm-2[for="admin access"]
+      | Admin Access:
+    .col-sm-10
+      p.form-control-static
+        = @employee.admin_access
+  .form-group
+    label.control-label.col-sm-2[for="department"]
+      | Department:
+    .col-sm-10
+      p.form-control-static
+        = @employee.department.name
+  .form-group
+    label.control-label.col-sm-2[for="document signed"]
+      | Document Signed:
+    .col-sm-10
+      p.form-control-static
+        = @employee.document_signed
+  .form-group
+    label.control-label.col-sm-2[for="beachhead computrace"]
+      | Beachhead and Computrace:
+    .col-sm-10
+      p.form-control-static
+        = @employee.beachhead_computrace
+  = link_to 'Edit', edit_employee_path(@employee), class: 'btn btn-info'
+  = link_to 'Back', employees_path, class: 'btn btn-info'
+  |  <table id="users-table" data-source="
+  = user_nsm_asset_nsm_assets_path(format: :json, employee: @employee.id.to_s)
+  | " class="table table-bordered"> 
+  thead
+    tr
+      th
+        | Id
+      th
+        | Code
+      th
+        | Computer Name
+      th
+        | Service Tag
+      th
+        | Invoice Number
+      th
+        | Operating System
+  tbody
+
+  script
+    |  data_table(); 

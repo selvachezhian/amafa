@@ -1,0 +1,30 @@
+= form_for(nsm_asset_type, :html => {:class => 'form-horizontal'}) do |f|
+  - if nsm_asset_type.errors.any?
+    #error_explanation
+      h2
+        = pluralize(nsm_asset_type.errors.count, "error")
+        |  prohibited this nsm_asset_type from being saved:
+      ul
+        - nsm_asset_type.errors.full_messages.each do |message|
+          li
+            = message
+  .container-fluid
+    .form-group
+      = f.label :name, class: 'control-label col-sm-2'
+      .col-sm-3
+        = f.text_field :name, class: 'form-control', placeholder: 'Enter asset name'
+    .form-group
+      = f.label :description, class: 'control-label col-sm-2'
+      .col-sm-3
+        = f.text_area :description, class: 'form-control', placeholder: 'Enter description'
+    .form-group
+      = f.label :charger, class: 'control-label col-sm-2'
+      .col-sm-1
+        = f.check_box(:charger)
+      = f.label :laptop_bag, class: 'control-label col-sm-2'
+      .col-sm-1
+        = f.check_box(:laptop_bag)
+    .actions
+      .col-sm-offset-2.col-sm-4
+        = f.submit class: 'btn btn-info'
+        =< link_to 'Back', nsm_asset_types_path, class: 'btn btn-info'

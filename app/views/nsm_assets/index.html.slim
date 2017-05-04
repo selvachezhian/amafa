@@ -1,0 +1,28 @@
+.col-sm-10
+  h3
+    | Nsm Assets
+.col-sm-2
+  = link_to 'New Nsm Asset', new_nsm_asset_path, class: 'btn btn-info'
+.container-fluid
+  table.table.table-striped.table-hover.table-condensed.table-bordered
+    thead
+      tr
+        th
+          | Nsm asset
+        th
+          | Code
+        th
+          | Invoice Number
+        th
+    tbody
+      - @nsm_assets.each do |nsm_asset|
+        tr
+          td
+            = nsm_asset.nsm_asset_type.name
+          td
+            = link_to nsm_asset.code, nsm_asset
+          td
+            = nsm_asset.invoice_number
+          td
+            = link_to '', edit_nsm_asset_path(nsm_asset), class: 'glyphicon glyphicon-pencil'
+  = paginate @nsm_assets
